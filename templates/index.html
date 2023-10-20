@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ordenação de Vetores</title>
+    <!-- Adicione os links para os arquivos Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body class="container mt-5">
+    <h1 class="mb-4">Ordenação de Vetores</h1>
+    <form method="POST">
+      <div class="form-group">
+        <label for="input_array"
+          >Insira os números inteiros separados por espaços:</label
+        >
+        <textarea
+          class="form-control"
+          id="input_array"
+          name="input_array"
+          rows="3"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Ordenar</button>
+    </form>
+
+    {% if arraySortida %}
+    <h3 class="mt-4">Vetor Ordenado:</h3>
+    <p>{{ arraySortida }}</p>
+    <h3>Tempo de Execução: {{ tempoTomado }} milissegundos</h3>
+    {% endif %} {% if error_message %}
+    <p class="mt-4" style="color: red">{{ error_message }}</p>
+    {% endif %}
+
+    <!-- Adicione os scripts Bootstrap JS no final do corpo do documento para melhorar o desempenho da página -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      var input = document.getElementById("input_array");
+      input.addEventListener("input", () => {
+        input.value = input.value.replace(/[^0-9\s]/g, ""); // Remove caracteres que não são números ou espaços
+      });
+    </script>
+  </body>
+</html>
