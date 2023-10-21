@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Consulta de Registros</title>
+</head>
+<body>
+
+<p>Tempo de execução da consulta: <span id="tempo-execucao">{{ tempo_execucao }}</span> ms</p>
+<p>Para acessar em json entrar na rota /consultar</p>
+<!-- Os resultados da consulta serão exibidos aqui -->
+<ul id="resultados">
+  {% for pessoa in pessoas %}
+    <li>ID: {{ pessoa.id }}, Nome: {{ pessoa.nome }}, Email: {{ pessoa.email }}, Telefone: {{ pessoa.telefone }}, Observação: {{ pessoa.observacao }}</li>
+  {% endfor %}
+</ul>
+
+
+</body>
+</html>

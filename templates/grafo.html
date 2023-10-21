@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado do Algoritmo de Dijkstra</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">Resultado do Algoritmo de Dijkstra</h1>
+
+        <p>Tempo decorrido para calcular as distâncias mínimas: {{ elapsed_time }} segundos</p>
+
+        <h2>Distâncias mínimas:</h2>
+        <ul class="list-group">
+            {% for node, distance in result.items() %}
+                <li class="list-group-item">Distância de {{ start_node }} para {{ node }}: {{ distance }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
